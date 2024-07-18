@@ -7,11 +7,10 @@ class Student(Base):
     __tablename__ = 'students'
 
     id = Column(Integer, primary_key=True, index=True)
-    first_name = Column(String, nullable=False)
-    last_name = Column(String, nullable=False)
-    student_id = Column(String, unique=True, nullable=False)
-    birthdate = Column(String, nullable=False)
-    gender = Column(String, nullable=False)
+    name = Column(String, index=True)
+    lastname = Column(String, index=True)
+    dob = Column(String, index=True)
+    sex = Column(String, index=True)
 
 class Book(Base):
     __tablename__ = 'books'
