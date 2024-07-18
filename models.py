@@ -12,3 +12,12 @@ class Student(Base):
     student_id = Column(String, unique=True, nullable=False)
     birthdate = Column(String, nullable=False)
     gender = Column(String, nullable=False)
+
+class Book(Base):
+    __tablename__ = 'books'
+
+    id = Column(Integer, primary_key=True, index=True)
+    title = Column(String, index=True)
+    author = Column(String, index=True)
+    year = Column(Integer, index=True)
+    is_published = Column(Boolean, index=True)
