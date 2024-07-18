@@ -1,5 +1,10 @@
 from dotenv import load_dotenv
 load_dotenv()
+import os
+
+my_variable = os.getenv('MY_VARIABLE')
+print(my_variable)
+
 
 from fastapi import FastAPI, Depends, Response, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
