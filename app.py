@@ -2,9 +2,6 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 
-my_variable = os.getenv('MY_VARIABLE')
-print(my_variable)
-
 
 from fastapi import FastAPI, Depends, Response, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
@@ -49,7 +46,7 @@ async def get_book(book_id: int, db: Session = Depends(get_db)):
 @router_v1.post('/books')
 async def create_book(book: dict, response: Response, db: Session = Depends(get_db)):
     # TODO: Add validation
-    newbook = models.Book(title=book['title'], author=book['author'], year=book['year'], is_published=book['is_published'])
+    newbook = models.Book(title=book['title'], author=book['author'], year=book['year'], is_published=book['is_published'], detail=book['detail'])
     db.add(newbook)
     db.commit()
     db.refresh(newbook)
