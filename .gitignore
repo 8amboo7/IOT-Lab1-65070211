@@ -1,3 +1,4 @@
 .env
 sql.db
 __pycache__/
+update.py
