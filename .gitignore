@@ -2,3 +2,4 @@
 sql.db
 __pycache__/
 update.py
+venv/
